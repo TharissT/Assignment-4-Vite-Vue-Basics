@@ -18,21 +18,14 @@ function calculateCosineLaw() {
     <form @submit.prevent="calculateCosineLaw">
       <div class="calculator-container">
         <h1>Cosine Law</h1>
-        
-        <label for="side-a">Side A:</label>
+        <label >Side A:</label>
         <input v-model="sideA" type="number"  />
-        
-        <label for="side-b">Side B:</label>
+        <label >Side B:</label>
         <input v-model="sideB" type="number"  />
-        
-
-        <label for="angle-c">Angle C (in degrees):</label>
+        <label >Angle C (in degrees):</label>
         <input v-model="angleC" type="number"  />
-        
-      
-        <label for="side-c">Side C (Result):</label>
+        <label> Side C (Result):</label>
         <input v-model="sideC" type="text" readonly />
-    
         <input type="submit" value="Calculate" />
       </div>
     </form>
