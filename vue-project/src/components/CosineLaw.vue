@@ -5,32 +5,25 @@ const sideA = ref(0);
 const sideB = ref(0);
 const angleC = ref(0);
 const sideC = ref(0);
-
 function calculateCosineLaw() {
   const angleInRadians = (angleC.value * Math.PI) / 180; 
   sideC.value = Math.sqrt(
-    sideA.value ** 2 + sideB.value ** 2 - 2 * sideA.value * sideB.value * Math.cos(angleInRadians)
-  );
+    sideA.value ** 2 + sideB.value ** 2 - 2 * sideA.value * sideB.value * Math.cos(angleInRadians));
 }
 </script>
 
 <template>
   <div class="calculator-container">
-   
     <form @submit.prevent="calculateCosineLaw" class="cosine-law">
       <h1>Cosine Law</h1>
       <label for="side-a">Side A:</label>
       <input id="side-a" v-model.number="sideA" type="number" />
-
       <label for="side-b">Side B:</label>
       <input id="side-b" v-model.number="sideB" type="number" />
-
       <label for="angle-c">Angle C (in degrees):</label>
       <input id="angle-c" v-model.number="angleC" type="number" />
-
       <label for="side-c">Side C (Result):</label>
       <input id="side-c" v-model="sideC" type="text" readonly />
-
       <input type="submit" value="Calculate" />
     </form>
   </div>
@@ -38,11 +31,11 @@ function calculateCosineLaw() {
 
 <style scoped>
 form {
-  position: absolute; /* Set position to absolute */
-  top: 0px; /* Distance from the top of the screen */
-  left: 20px; /* Distance from the left of the screen */
+  position: absolute; 
+  top: 0px; 
+  left: 20px; 
   max-width: 400px;
-  margin: 0; /* Remove any auto margins */
+  margin: 0; 
   padding: 20px;
   background-color: #1a1a1a;
   color: #f0f0f0;
@@ -90,10 +83,5 @@ input[type="submit"]:hover {
   background-color: black;
 }
 
-form.cosine-law {
-  top: 20px;
-  left: 20px;
-  z-index: 3; /* Make sure it appears above the others */
-}
 
 </style>

@@ -1,65 +1,33 @@
 <script setup>
-import CosLaw from './components/CosineLaw.vue';
+import CosineLaw from './components/CosineLaw.vue';
 import AsymptoteFinder from './components/AsymptoteFinder.Vue';
 import GregoryLeibnizPi from './components/GregoryLeibnizPi.vue';
 </script>
 
 <template>
   <div class="app-container">
-    <CosLaw />
+    <CosineLaw />
     <AsymptoteFinder />
     <GregoryLeibnizPi />
   </div>
 </template>
 
 <style scoped>
- .calculator-container {
-    max-width: 400px;
-    margin: auto;
-    padding: 20px;
-    background-color: #1a1a1a;
-    color: #f0f0f0;
-    border-radius: 10px;
-    text-align: center;
-  }
-  
-  h1 {
-    color: #00bfff;
-    margin-bottom: 20px;
-  }
-  
-  label {
-    display: block;
-    margin-top: 10px;
-    margin-bottom: 5px;
-    color: #00bfff;
-  }
-  
-  input[type="number"],
-  input[type="text"] {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 2px solid #00bfff;
-    border-radius: 5px;
-    background-color: #333;
-    color: #fff;
-  }
-  
-  input[type="text"] {
-    cursor: not-allowed;
-  }
-  
-  button {
-    background-color: #00bfff;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #009acd;
-  }
+ .app-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 150px; /* Add padding to prevent cutting off content */
+  height: 700px; /* Full viewport height */
+  box-sizing: border-box; /* Ensure padding doesn't cause overflow */
+}
+
+.calculators {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two columns in the top row */
+  grid-template-rows: auto auto; /* Two rows */
+  gap: 20px; /* Space between items */
+  justify-items: center; /* Center items horizontally */
+  align-items: center; /* Center items vertically */
+}
 </style>

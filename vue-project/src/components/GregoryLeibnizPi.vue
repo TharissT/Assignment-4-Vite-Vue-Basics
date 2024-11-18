@@ -1,28 +1,25 @@
 <script setup>
   import { ref } from 'vue';
-  
   const nValue = ref(0);
   const piApproximation = ref(0);
   
-  const calculatePi = () => {
+  function calculatePi() {
     let sum = 0;
     for (let i = 0; i < nValue.value; i++) {
       sum += (4 * ((-1) ** i) / (2 * i + 1));
     }
     piApproximation.value = sum;
-};
-  </script>
-  
-  <template>
+}
+</script>
+
+<template>
   <div class="calculator-container">
-  <form @submit.prevent="calculatePi" class="gregory-pi">
+    <form @submit.prevent="calculatePi" class="gregory-pi">
       <h1>Gregory-Leibniz Pi Approximation</h1>
       <label for="n-value">n Value:</label>
       <input v-model.number="nValue" type="number" id="n-value" />
-
       <label for="pi-approximation">Pi Approximation (Result):</label>
       <input v-model="piApproximation" type="text" id="pi-approximation" readonly />
-
       <input type="submit" value="Calculate" />
     </form>
     </div>
@@ -87,7 +84,7 @@ form:nth-of-type(2) {
 
 form.gregory-pi {
   position: absolute;
-  top: 200px; 
+  top: 700px; 
   left: 20px;  
   z-index: 1; 
 }
